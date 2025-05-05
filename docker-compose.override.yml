@@ -1,7 +1,23 @@
 # docker-compose.override.yml
-version: '3.1'
+# version: '3.1'
 
 services:
+
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: covid_db
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      retries: 5
+      
 
   spark-master:
     image: bitnami/spark:latest
@@ -46,3 +62,4 @@ services:
 
 volumes:
   spark-data:
+  postgres-db-volume:
