@@ -18,7 +18,7 @@ from crypto.tasks import (
 
 # TODO constants
 DAG_ID = "crypto-prices-worflow"
-OWNER = "luan moreno m. maciel"
+OWNER = "allan braquiel da silva"
 RETRIES = 3
 RETRY_DELAY = timedelta(minutes=5)
 EXECUTION_TIMEOUT = timedelta(minutes=30)

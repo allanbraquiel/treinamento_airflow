@@ -23,6 +23,9 @@
 
 
 FROM quay.io/astronomer/astro-runtime:12.4.0
+#FROM quay.io/astronomer/astro-runtime:12.7.1-python-3.12
+#FROM apache/airflow:2.8.1-python3.12
+
 
 USER root
 
